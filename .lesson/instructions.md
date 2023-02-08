@@ -6,16 +6,32 @@
 
 ## Exercício 10
 
+Vamos a um desafio! Crie um programa que realize os seguintes passos:
 
-Agora chegou a sua vez! Para fazer esse exercício, vc precisa:
+1) Solicite um número com `prompt` e guarde o que foi digitado em uma variável `primeiroNumero`;
+2) Solicite um segundo número via `prompt` e guarde o que foi digitado em uma variável `segundoNumero`;
+3) Solicite qual operação matemática deve ser realizada entre esses números através de um prompt. Os valores válidos são `"adição"`, `"subtração"`, `"multiplicação"` e `"divisão"`. Caso algo diferente disso tenha sido digitado, o programa deve ser finalizado com um `alert` informando o erro;
+4) Por fim, mostre em um `alert` o resultado da operação matemática realizada entre `primeiroNumero` e `segundoNumero`.
 
-* Ter uma conta no portal [Github](https://www.github.com/).
-* Ter sua conta Repl.it conectada à sua conta do Github
+### Dicas
+- Utilize `if` e `else` com o operador de igualdade para saber qual operação matemática foi escolhida via prompt. Exemplo:
 
-O Github é a maior plataforma de compartilhamento de códigos do mundo. E entre diversos outros usos, é a ferramenta perfeita para montarmos um portfólio. Ao longo da graduação iremos usar e aprofundar o conhecimento sobre essa plataformar. Nesse momento, basta aprendermos como guardar nossos códigos lá e ainda hospedar uma página pessoal! Se você quiser ler um pouco mais sobre Github [leia esse post super completo](https://blog.geekhunter.com.br/github-o-que-e-como-usar/).
+```javascript
+let operacao = prompt("Digite a operação matemática");
+if (operacao === "adição") {
+  let resultadoSoma = primeiroNumero + segundoNumero;
+  alert(resultadoSoma);
+} else if (operacao === "subtração") {
+  let resultadoSubtracao = primeiroNumero - segundoNumero;
+  alert(resultadoSubtracao);
+} else {
+  // Continuar código...
+}
+```
 
-### Vamos a tarefa!
-1. Crie uma página pessoal, que conte com seu nome, sua idade, seu curso, algumas curiosidades sobre você  e email de contato (al.infnet.edu.br). Use o máximo de tags aprendidas no curso até agora.
-2. No menu lateral, você ira clicar no icone de Versionamento de Código e crie um repositório Git com o nome `MyPage`, faça o commit e envie os códigos para o Github e aguarde alguns minutos.
-3. Agora acesse `https://<conta do Github>.github.io/MyPage`. A página criada aqui no Replit, agora está pública para toda internet.
+- É necessário converter os números digitados no `prompt` para o tipo `number`, ou as operações matemáticas não vão funcionar corretamente. Exemplo:
 
+```javascript
+let primeiroNumero = prompt("Digite o primeiro número:");
+let primeiroNumeroConvertido = Number(primeiroNumero);
+```
